@@ -22,10 +22,50 @@
   </head>
   <body>
 
-    <div class="container mt-5">
-      <h1>News</h1>
-    </div>
+<div class="container mt-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
+<h1>Tompa Bay Gazette</h1>            
+            
+
+      </nav>
+
+
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+              <div class="container"> 
+            <h4>Top Headlines</h4>
+                 <div class="col-sm-12">
+            <% for article in @latest %>
+                    <h3> <a href=<%= article["url"] %> > <%= article["title"] %> </a> </h3>
+                    <p> <%= article["description"] %> </p>
+              <% end %> </div>
+                </div>
+            </div>
+ 
+            
+            <div class="col-md-6">
+              <div class="container container3">    
+                <h4>Weather Forecast</h4>
+                <div class="col-sm-12">
+
+                 <% for test in @days %>
+                 <div class="row mt-4"> <%= test %> </div>
+                <% end %> 
+
+                 <% for test2 in @fiveday %>
+                 <div class="row mt-4"> <%= test2 %> </div>
+                <% end %>   
+
+                </div>
+                </div>
+                </div>
+
+</div>
+
+ 
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
